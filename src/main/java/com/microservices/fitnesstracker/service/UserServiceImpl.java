@@ -1,5 +1,6 @@
 package com.microservices.fitnesstracker.service;
 
+import com.microservices.fitnesstracker.dto.UserDTO;
 import com.microservices.fitnesstracker.model.User;
 import com.microservices.fitnesstracker.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -19,8 +20,13 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public List<User> createUsers(List<User> users) {
+        return userRepository.saveAll(users);
+    }
+
+    @Override
     public User getUserById(Long id) {
-        return userRepository.getById(id);
+        return userRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -28,16 +34,25 @@ public class UserServiceImpl implements UserService{
         return userRepository.findAll();
     }
 
-//    @Override
-//    public User updateUser(User user) {
-//
-//        userRepository.findById(user.getId()).map(
-//                user1 -> user.setUsername(user.getUsername())
-//        )
-//        getUserById(user.getId()).setUsername(user.getUsername());
-//
-//        return user;
-//    }
+    @Override
+    public User updateUser(Long id, User user) {
+
+        return  userRepository.findById(id)
+                .map(user1 -> {
+                    user1.setUsername(user.getUsername());
+                    user1.setAge(user.getAge());
+                    user1.setEmail(user.getEmail());
+                    user1.setPassword(user.getPassword());
+                    user1.setWeight(user.getWeight());
+                    user1.setHeight(user.getHeight());
+                    user1.setGoal(user.getGoal());
+                    user1.setWorkouts(user.getWorkouts());
+
+                    return userRepository.save(user1);
+                })
+        .orElse(null);
+
+    }
 
     @Override
     public void deleteUser(User user) {
@@ -48,5 +63,11 @@ public class UserServiceImpl implements UserService{
     public void deleteAllUsers() {
         userRepository.deleteAll();
     }
+
+    @Override
+    public void deleteUserById(Long id) {
+        userRepository.deleteById(id);
+    }
+
 
 }
