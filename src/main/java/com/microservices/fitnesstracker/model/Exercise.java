@@ -1,5 +1,6 @@
 package com.microservices.fitnesstracker.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +20,7 @@ public class Exercise {
     private double weight;
     @ManyToOne
     @JoinColumn(name = "workout_id")
+    @JsonBackReference
     private Workout workout;
 
 }

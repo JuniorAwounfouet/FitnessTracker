@@ -1,5 +1,6 @@
 package com.microservices.fitnesstracker.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,5 +27,6 @@ public class User {
     private String goal;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
     private List<Workout> workouts = new ArrayList<>();
 }
