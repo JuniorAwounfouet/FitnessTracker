@@ -1,7 +1,7 @@
 package com.microservices.fitnesstracker.controller;
 
 import com.microservices.fitnesstracker.model.BodyMeasurement;
-import com.microservices.fitnesstracker.service.BodyMeasurementService;
+import com.microservices.fitnesstracker.service.BodyMeasure.BodyMeasurementService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

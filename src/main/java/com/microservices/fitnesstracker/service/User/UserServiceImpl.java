@@ -1,6 +1,5 @@
-package com.microservices.fitnesstracker.service;
+package com.microservices.fitnesstracker.service.User;
 
-import com.microservices.fitnesstracker.dto.UserDTO;
 import com.microservices.fitnesstracker.model.User;
 import com.microservices.fitnesstracker.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -45,6 +44,7 @@ public class UserServiceImpl implements UserService{
                     user1.setPassword(user.getPassword());
                     user1.setWeight(user.getWeight());
                     user1.setHeight(user.getHeight());
+                    user1.setGender(user.getGender());
                     user1.setGoal(user.getGoal());
                     user1.setWorkouts(user.getWorkouts());
 

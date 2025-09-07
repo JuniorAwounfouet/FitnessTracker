@@ -1,4 +1,4 @@
-package com.microservices.fitnesstracker.service;
+package com.microservices.fitnesstracker.service.Meal;
 
 import com.microservices.fitnesstracker.model.Meal;
 import com.microservices.fitnesstracker.repository.MealRepository;
@@ -34,6 +34,7 @@ public class MealServiceImpl implements MealService {
                     meal1.setProtein(meal.getProtein());
                     meal1.setCarbs(meal.getCarbs());
                     meal1.setFats(meal.getFats());
+//                    meal1.setGoal(meal.getGoal());
                     meal1.setUser(meal.getUser());
 
                     return mealRepository.save(meal1);

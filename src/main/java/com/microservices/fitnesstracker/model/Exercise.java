@@ -1,6 +1,7 @@
 package com.microservices.fitnesstracker.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.microservices.fitnesstracker.Enum.MuscleGoup;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,7 +15,8 @@ public class Exercise {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String muscleGroup;
+    @Enumerated(EnumType.STRING)
+    private MuscleGoup muscleGroup;
     private int sets;
     private int reps;
     private double weight;

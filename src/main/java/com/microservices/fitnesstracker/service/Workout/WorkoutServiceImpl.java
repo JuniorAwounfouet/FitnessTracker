@@ -1,4 +1,4 @@
-package com.microservices.fitnesstracker.service;
+package com.microservices.fitnesstracker.service.Workout;
 
 import com.microservices.fitnesstracker.model.Workout;
 import com.microservices.fitnesstracker.repository.WorkoutRepository;

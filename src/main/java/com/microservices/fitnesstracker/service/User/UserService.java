@@ -1,11 +1,9 @@
-package com.microservices.fitnesstracker.service;
+package com.microservices.fitnesstracker.service.User;
 
-import com.microservices.fitnesstracker.dto.UserDTO;
 import com.microservices.fitnesstracker.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public interface UserService {

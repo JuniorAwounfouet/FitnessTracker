@@ -1,4 +1,4 @@
-package com.microservices.fitnesstracker.service;
+package com.microservices.fitnesstracker.service.BodyMeasure;
 
 import com.microservices.fitnesstracker.model.BodyMeasurement;
 import org.springframework.stereotype.Service;

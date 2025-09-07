@@ -1,4 +1,4 @@
-package com.microservices.fitnesstracker.service;
+package com.microservices.fitnesstracker.service.Meal;
 
 import com.microservices.fitnesstracker.model.Meal;
 import org.springframework.stereotype.Service;

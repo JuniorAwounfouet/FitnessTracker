@@ -1,6 +1,8 @@
 package com.microservices.fitnesstracker.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.microservices.fitnesstracker.Enum.Gender;
+import com.microservices.fitnesstracker.Enum.Goal;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +23,10 @@ public class User {
     private int age;
     private double weight;
     private double height;
-    private String goal;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+    @Enumerated(EnumType.STRING)
+    private Goal goal;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference

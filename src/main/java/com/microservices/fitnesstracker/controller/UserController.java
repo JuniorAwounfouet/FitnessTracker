@@ -1,8 +1,7 @@
 package com.microservices.fitnesstracker.controller;
 
-import com.microservices.fitnesstracker.dto.UserDTO;
 import com.microservices.fitnesstracker.model.User;
-import com.microservices.fitnesstracker.service.UserServiceImpl;
+import com.microservices.fitnesstracker.service.User.UserServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

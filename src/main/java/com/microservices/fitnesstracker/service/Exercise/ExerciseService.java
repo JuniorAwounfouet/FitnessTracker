@@ -1,8 +1,6 @@
-package com.microservices.fitnesstracker.service;
+package com.microservices.fitnesstracker.service.Exercise;
 
 import com.microservices.fitnesstracker.model.Exercise;
-import com.microservices.fitnesstracker.model.Workout;
-import com.microservices.fitnesstracker.repository.ExerciseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

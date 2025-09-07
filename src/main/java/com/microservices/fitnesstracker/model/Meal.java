@@ -1,6 +1,7 @@
 package com.microservices.fitnesstracker.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.microservices.fitnesstracker.Enum.Goal;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,6 +26,4 @@ public class Meal {
     @JoinColumn(name = "user_id")
     @JsonBackReference
     private User user;
-
-
 }

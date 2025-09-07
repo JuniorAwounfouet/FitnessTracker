@@ -1,9 +1,8 @@
 package com.microservices.fitnesstracker.controller;
 
 import com.microservices.fitnesstracker.model.Workout;
-import com.microservices.fitnesstracker.service.WorkoutService;
+import com.microservices.fitnesstracker.service.Workout.WorkoutService;
 import lombok.AllArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

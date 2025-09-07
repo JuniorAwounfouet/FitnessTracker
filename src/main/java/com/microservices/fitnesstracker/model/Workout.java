@@ -2,6 +2,8 @@ package com.microservices.fitnesstracker.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.microservices.fitnesstracker.Enum.Goal;
+import com.microservices.fitnesstracker.Enum.Type;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +21,8 @@ public class Workout {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate date;
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private Type type;
     private  String notes;
     @ManyToOne
     @JoinColumn(name = "user_id")

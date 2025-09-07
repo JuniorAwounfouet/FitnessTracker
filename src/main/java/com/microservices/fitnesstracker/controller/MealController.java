@@ -1,7 +1,7 @@
 package com.microservices.fitnesstracker.controller;
 
 import com.microservices.fitnesstracker.model.Meal;
-import com.microservices.fitnesstracker.service.MealService;
+import com.microservices.fitnesstracker.service.Meal.MealService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
