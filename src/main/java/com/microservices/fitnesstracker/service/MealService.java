@@ -1,0 +1,18 @@
+package com.microservices.fitnesstracker.service;
+
+import com.microservices.fitnesstracker.model.Meal;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public interface MealService {
+
+    public Meal createMeal(Meal meal);
+    public List<Meal> createMeals(List<Meal> meals);
+    public Meal updateMeal(Meal meal, Long id);
+    public Meal findById(long id);
+    public List<Meal> findAll();
+    public void deleteMeal(Long id);
+
+}
