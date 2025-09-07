@@ -1,5 +1,6 @@
 package com.microservices.fitnesstracker.controller;
 
+import com.microservices.fitnesstracker.model.Meal;
 import com.microservices.fitnesstracker.model.User;
 import com.microservices.fitnesstracker.service.User.UserServiceImpl;
 import lombok.AllArgsConstructor;
@@ -52,6 +53,16 @@ public class UserController {
     @DeleteMapping("/delete/{id}")
     public void deleteUserById(@PathVariable Long id){
         userService.deleteUserById(id);
+    }
+
+    @GetMapping("/{id}/meals")
+    public List<Meal> getMeals(@PathVariable Long id){
+        return userService.getMeals(id);
+    }
+
+    @GetMapping("/{id}/meals/calories")
+    public Double getMealsCalories(@PathVariable Long id){
+        return userService.getCalories(id);
     }
 
 }

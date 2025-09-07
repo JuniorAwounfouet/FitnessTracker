@@ -30,8 +30,8 @@ public class WorkoutServiceImpl implements WorkoutService {
                             workout1.setDate(workout.getDate());
                             workout1.setType(workout.getType());
                             workout1.setNotes(workout.getNotes());
-                            workout1.setUser(workout.getUser());
-                            workout1.setExercises(workout.getExercises());
+//                            workout1.setUser(workout.getUser());
+//                            workout1.setExercises(workout.getExercises());
 
                            return workoutRepository.save(workout1);
         }).orElse(null);

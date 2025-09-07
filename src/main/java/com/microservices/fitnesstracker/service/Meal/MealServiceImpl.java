@@ -35,7 +35,7 @@ public class MealServiceImpl implements MealService {
                     meal1.setCarbs(meal.getCarbs());
                     meal1.setFats(meal.getFats());
 //                    meal1.setGoal(meal.getGoal());
-                    meal1.setUser(meal.getUser());
+//                    meal1.setUser(meal.getUser());
 
                     return mealRepository.save(meal1);
                 }).orElse(null);

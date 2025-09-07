@@ -1,11 +1,13 @@
 package com.microservices.fitnesstracker.service.User;
 
+import com.microservices.fitnesstracker.model.Meal;
 import com.microservices.fitnesstracker.model.User;
 import com.microservices.fitnesstracker.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor
@@ -46,7 +48,7 @@ public class UserServiceImpl implements UserService{
                     user1.setHeight(user.getHeight());
                     user1.setGender(user.getGender());
                     user1.setGoal(user.getGoal());
-                    user1.setWorkouts(user.getWorkouts());
+//                    user1.setWorkouts(user.getWorkouts());
 
                     return userRepository.save(user1);
                 })
@@ -67,6 +69,20 @@ public class UserServiceImpl implements UserService{
     @Override
     public void deleteUserById(Long id) {
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Meal> getMeals(Long id) {
+        return userRepository.findById(id).get().getMeals();
+    }
+
+    @Override
+    public double getCalories(Long id) {
+        return userRepository.findById(id)
+                .get()
+                .getMeals()
+                .stream()
+                .mapToDouble(Meal::getCalories).sum();
     }
 
 

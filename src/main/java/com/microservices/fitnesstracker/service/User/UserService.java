@@ -1,5 +1,6 @@
 package com.microservices.fitnesstracker.service.User;
 
+import com.microservices.fitnesstracker.model.Meal;
 import com.microservices.fitnesstracker.model.User;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +17,8 @@ public interface UserService {
     public void deleteUser(User user);
     public void deleteAllUsers();
     public void deleteUserById(Long id);
+
+    public List<Meal> getMeals(Long id);
+    public double getCalories(Long id);
 
 }
