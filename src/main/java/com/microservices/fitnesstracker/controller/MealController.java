@@ -1,6 +1,7 @@
 package com.microservices.fitnesstracker.controller;
 
 import com.microservices.fitnesstracker.model.Meal;
+import com.microservices.fitnesstracker.model.MealComposition;
 import com.microservices.fitnesstracker.service.Meal.MealService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -42,5 +43,10 @@ public class MealController {
     @DeleteMapping("/delete/{id}")
     public void deleteMealById(@PathVariable Long id) {
         mealService.deleteMeal(id);
+    }
+
+    @GetMapping("/{id}/mealCompo")
+    public MealComposition getMealComposition(@PathVariable Long id) {
+        return mealService.findMealComposition(id);
     }
 }

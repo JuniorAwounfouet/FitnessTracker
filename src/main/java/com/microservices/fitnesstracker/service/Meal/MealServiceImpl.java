@@ -1,6 +1,7 @@
 package com.microservices.fitnesstracker.service.Meal;
 
 import com.microservices.fitnesstracker.model.Meal;
+import com.microservices.fitnesstracker.model.MealComposition;
 import com.microservices.fitnesstracker.repository.MealRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -54,5 +55,17 @@ public class MealServiceImpl implements MealService {
     @Override
     public void deleteMeal(Long id) {
         mealRepository.deleteById(id);
+    }
+
+    @Override
+    public MealComposition findMealComposition(Long id) {
+
+        MealComposition mealComposition = new MealComposition();
+
+        mealComposition.setProtein(mealRepository.findById(id).get().getProtein());
+        mealComposition.setCarbs(mealRepository.findById(id).get().getCarbs());
+        mealComposition.setFats(mealRepository.findById(id).get().getFats());
+
+        return mealComposition;
     }
 }
