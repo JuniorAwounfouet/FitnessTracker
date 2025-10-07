@@ -1,5 +1,6 @@
 package com.microservices.fitnesstracker.service.User;
 
+import com.microservices.fitnesstracker.dto.UserDTO;
 import com.microservices.fitnesstracker.model.Meal;
 import com.microservices.fitnesstracker.model.User;
 import com.microservices.fitnesstracker.repository.UserRepository;
@@ -17,6 +18,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User createUser(User user) {
+
         return userRepository.save(user);
     }
 
@@ -26,8 +28,10 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public User getUserById(Long id) {
-        return userRepository.findById(id).orElse(null);
+    public UserDTO getUserById(Long id) {
+
+        User user = userRepository.findById(id).orElse(null);
+        return new UserDTO(user.getUsername(), user.getAge());
     }
 
     @Override
@@ -48,6 +52,7 @@ public class UserServiceImpl implements UserService{
                     user1.setHeight(user.getHeight());
                     user1.setGender(user.getGender());
                     user1.setGoal(user.getGoal());
+                    user1.setRoles(user.getRoles());
 //                    user1.setWorkouts(user.getWorkouts());
 
                     return userRepository.save(user1);

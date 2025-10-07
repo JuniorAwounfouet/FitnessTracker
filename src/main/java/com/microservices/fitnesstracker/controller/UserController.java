@@ -1,5 +1,6 @@
 package com.microservices.fitnesstracker.controller;
 
+import com.microservices.fitnesstracker.dto.UserDTO;
 import com.microservices.fitnesstracker.model.Meal;
 import com.microservices.fitnesstracker.model.User;
 import com.microservices.fitnesstracker.service.User.UserServiceImpl;
@@ -31,7 +32,7 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id){
+    public UserDTO getUser(@PathVariable Long id){
         return userService.getUserById(id);
     }
 

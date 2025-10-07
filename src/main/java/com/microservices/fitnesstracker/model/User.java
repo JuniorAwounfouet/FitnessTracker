@@ -27,6 +27,7 @@ public class User {
     private Gender gender;
     @Enumerated(EnumType.STRING)
     private Goal goal;
+    private  String roles;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
