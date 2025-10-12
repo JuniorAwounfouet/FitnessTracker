@@ -12,6 +12,8 @@ public interface BodyMeasurementService {
     public List<BodyMeasurement> createBodyMeasurementList(List<BodyMeasurement> bodyMeasurements);
     public BodyMeasurement updateBodyMeasurement(BodyMeasurement bodyMeasurement, Long id);
     public BodyMeasurement findById(Long id);
+
+    // Penser RGPD
     public List<BodyMeasurement> findAll();
     public void deleteBodyMeasurementById(Long id);
 
