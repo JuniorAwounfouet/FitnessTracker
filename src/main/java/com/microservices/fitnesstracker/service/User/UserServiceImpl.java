@@ -81,6 +81,7 @@ public class UserServiceImpl implements UserService{
         return userRepository.findById(id).get().getMeals();
     }
 
+    // TODO rajouter une précision pour calories sur une journée
     @Override
     public double getCalories(Long id) {
         return userRepository.findById(id)
@@ -88,6 +89,10 @@ public class UserServiceImpl implements UserService{
                 .getMeals()
                 .stream()
                 .mapToDouble(Meal::getCalories).sum();
+
+//        return userRepository.findById(id)
+//                .map(User::getMeals)
+//                .map(meals -> meals.stream().mapToDouble(Meal::getCalories).sum());
     }
 
 
