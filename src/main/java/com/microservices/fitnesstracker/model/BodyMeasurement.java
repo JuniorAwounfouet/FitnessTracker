@@ -10,14 +10,14 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name="BODYMEASUREMENT")
+@Table(name="bodymeasurement")
 public class BodyMeasurement {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate date;
     private double weight;
-    private double bodyFarPercentage;
+    private double body_fat_percentage;
     private double chest;
     private double waist;
     private double arms;

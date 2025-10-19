@@ -31,7 +31,7 @@ public class BodyMeasurementServiceImpl implements BodyMeasurementService {
                         b -> {
                             b.setDate(bodyMeasurement.getDate());
                             b.setWeight(bodyMeasurement.getWeight());
-                            b.setBodyFarPercentage(bodyMeasurement.getBodyFarPercentage());
+                            b.setBody_fat_percentage(bodyMeasurement.getBody_fat_percentage());
                             b.setChest(bodyMeasurement.getChest());
                             b.setWaist(bodyMeasurement.getWaist());
                             b.setArms(bodyMeasurement.getArms());
