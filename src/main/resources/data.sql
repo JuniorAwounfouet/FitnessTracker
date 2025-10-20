@@ -9,13 +9,6 @@ ALTER SEQUENCE bodymeasurement_id_seq RESTART WITH 1;
 TRUNCATE TABLE usergym CASCADE;
 ALTER SEQUENCE usergym_id_seq RESTART WITH 1;
 
--- DROP TABLE IF EXISTS exercise CASCADE;
--- DROP TABLE IF EXISTS workout CASCADE;
--- DROP TABLE IF EXISTS meal CASCADE;
--- DROP TABLE IF EXISTS bodymeasurement CASCADE;
--- DROP TABLE IF EXISTS usergym CASCADE;
-
-
 -- ============================
 -- TABLE : users
 -- ============================
